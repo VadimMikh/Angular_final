@@ -1,0 +1,13 @@
+<aside class="profiles">
+    <h2>Profiles</h2>
+    <div>
+        <input type="text" value="" class="form-control" ng-model="$ctrl.newProfile"/>
+        <button type="button" class="btn btn-default add_profile" ng-click="$ctrl.handleAddProfile($ctrl.newProfile)">New Profile</button>
+    </div>
+    <ul class="list-unstyled profiles_list">
+        <li class="profile_item" ng-class="{active: profile.active}" ng-repeat="profile in $ctrl.profiles" ng-click="$ctrl.handleSwitchProfile(profile.name)">
+            <h4 class="profile_name">{{profile.name}}</h4>
+            <button type="button" class="close" ng-if="$index !== 0" ng-click="$ctrl.handleRemoveProfile($index)"><span aria-hidden="true">&times;</span></button>
+        </li>
+    </ul>
+</aside>

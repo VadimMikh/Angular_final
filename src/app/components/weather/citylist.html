@@ -1,0 +1,22 @@
+<ul class="list-unstyled item-list">
+    <li ng-repeat="item in $ctrl.cities" class="item">
+        <div class="item-main">
+            <strong>{{item.city.name}}</strong>
+            <p>{{item.list[0].main.temp | decimal}} C</p>
+        </div>
+        <div class="item-secondary">
+            <p>{{item.list[0].weather[0].description}}</p>
+        </div>
+        <div class="item-buttons">
+            <button type="button" class="btn btn-danger" ng-click="$ctrl.handleCityRemove($index)">Delete</button>
+            <button type="button" class="btn btn-success" ng-click="$ctrl.handleShowMore($index)"><span ng-show="!item.more">More</span><span ng-show="item.more">Less</span></button>
+        </div>
+        <div ng-show="item.more" class="item-more">
+            <div ng-repeat="data in item.list">
+                <p>{{data.dt_txt}}</p>
+                <p>{{data.weather[0].description}}</p>
+                <p>{{data.main.temp | decimal}} C</p>
+            </div>
+        </div>
+    </li>
+</ul>

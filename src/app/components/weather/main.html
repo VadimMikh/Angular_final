@@ -1,0 +1,23 @@
+<div class="header">
+    <h1 class="text-center">Weather App</h1>
+</div>
+<profiles
+    new-profile="$ctrl.newProfile"
+    profiles="$ctrl.profiles"
+    add-profile="$ctrl.addProfile(val)"
+    switch-profile="$ctrl.switchProfile(name)"
+    remove-profile="$ctrl.removeProfile(ind)"
+    class="profiles">
+</profiles>
+<div class="city_list text-center">
+    <h2>Add City</h2>
+    <city-input 
+        get-weather="$ctrl.getWether(city)" 
+        city="$ctrl.city">
+    </city-input>
+    <city-list 
+        show-more="$ctrl.showMore(ind)"
+        city-remove="$ctrl.removeCity(ind)"
+        cities="$ctrl.citylist">
+    </city-list>
+</div>
